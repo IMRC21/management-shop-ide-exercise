@@ -1,0 +1,1 @@
+# management-shop-ide-exercise
