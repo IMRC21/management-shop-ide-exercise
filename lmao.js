@@ -12,8 +12,8 @@ function add(){
 	ct++;
 	var cancella = document.createElement("BUTTON");
 	var txt = document.createTextNode("Cancella");
-	cancella.setAttribute("class", ct);
-	cancella.setAttribute("onclick", "cancellaRiga(this.className)");
+	cancella.setAttribute("Id", ct);
+	cancella.setAttribute("onclick", "cancellaRiga(this.id)");
 	cancella.appendChild(txt);
 
 
@@ -22,7 +22,7 @@ function add(){
 	imp = document.getElementById("imp");
 
 	tr = document.createElement("TR");
-	tr.setAttribute("class", ct);
+	tr.setAttribute("Id", "x" + ct);
 	document.getElementById("myTable").appendChild(tr);
 
 	let td = document.createElement("TD");
@@ -41,9 +41,16 @@ function add(){
 	td3.appendChild(cancella);
 	tr.appendChild(td3);
 
+	prod.innerHTML = "";
+
 }
+
+
 
 function cancellaRiga(riceve){
 	console.log(riceve);
-	document.getElementsByClassName("" + riceve).remove();
+	var questaELaRigaDaCancellare = document.getElementById("x" + riceve);
+//	console.log("Test, questo e il tasto = " + questoEIlTastoCancella +" e questa e la riga da cancellare = " + questaELaRigaDaCancellare);
+	questaELaRigaDaCancellare.remove();
+
 }

@@ -12,10 +12,10 @@
   <body>
 	<div id="f" style="display: block;">
 		<label>Nome prodotto:</label>
-		<input type="text" id="prod">
+		<input type="text" id="prod" onfocus="this.value=''">
 		<label>
-		<input type="numer" id="qua" min="0">
-		<input type="numer" id="imp" min="0">
+		<input type="numer" id="qua" min="0" onfocus="this.value=''">
+		<input type="numer" id="imp" min="0" onfocus="this.value=''">
 		<button onclick="add()">
 			Invia
 		</button>
