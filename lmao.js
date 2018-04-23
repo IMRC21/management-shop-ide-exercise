@@ -6,7 +6,7 @@ var qua;
 var imp;
 var ct = 0;
 var riceve;
-
+var totale = 0;
 
 function add(){
 	ct++;
@@ -40,17 +40,27 @@ function add(){
 	let td3 = document.createElement("TD");
 	td3.appendChild(cancella);
 	tr.appendChild(td3);
+	var valore = imp.value;
+	var quantita = qua.value
+	if(valore == ""){
+		valore = 0;
+	}
+	if(quantita == ""){
+		quantita = 0;
+	}
 
-	prod.innerHTML = "";
+	totale += parseInt(valore) * parseInt(quantita);
 
+	document.getElementById("totale").innerHTML= "" + totale;
 }
 
 
 
 function cancellaRiga(riceve){
-	console.log(riceve);
 	var questaELaRigaDaCancellare = document.getElementById("x" + riceve);
 //	console.log("Test, questo e il tasto = " + questoEIlTastoCancella +" e questa e la riga da cancellare = " + questaELaRigaDaCancellare);
 	questaELaRigaDaCancellare.remove();
+	totale = totale - (parseInt(questaELaRigaDaCancellare.children[1].value) * parseInt(questaELaRigaDaCancellare.children[2].value));
+	document.getElementById("totale").innerHTML= "" + totale;
 
 }

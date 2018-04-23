@@ -14,13 +14,13 @@
 		<label>Nome prodotto:</label>
 		<input type="text" id="prod" onfocus="this.value=''">
 		<label>
-		<input type="number" id="qua" min="0" onfocus="this.value=''">
-		<input type="number" id="imp" min="0" onfocus="this.value=''">
+		<input type="number" id="qua" min="1" onfocus="this.value=''">
+		<input type="number" id="imp" min="1" onfocus="this.value='0'">
 		<button onclick="add()">
 			Invia
 		</button>
     <label> Totale: </label>
-
+    <label id="totale"></label>
 	</div>
 
     <table id="myTable" style="border: 2px solid black; float: left;">
